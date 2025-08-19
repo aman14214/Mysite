@@ -12,23 +12,32 @@
   gap: 20px; /* space between links */
 }
 
-.topbar-left a {
+/* Link styling */
+.topbar-link {
   text-decoration: none;
   color: #333;
   font-weight: 500;
   padding: 5px 10px;
   border-radius: 4px;
   transition: background-color 0.2s, color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px; /* space between icon and text */
 }
 
-.topbar-left a:hover {
+.topbar-link:hover {
   color: #fff;
   background-color: #2a7b36; /* hover background */
 }
 
-.topbar-left .active {
+.topbar-link.active {
   color: #fff;
-  background-color: #2a7b36; /* clicked/active background */
+  background-color: #2a7b36; /* active/selected background */
+}
+
+/* Icon styling */
+.icon {
+  font-size: 14px;
 }
 
 /* ===========================
@@ -63,8 +72,9 @@
     align-items: center;
   }
 
-  .topbar-left a {
+  .topbar-link {
     width: 100%;
+    justify-content: center; /* center icon + text */
     text-align: center;
   }
 }
