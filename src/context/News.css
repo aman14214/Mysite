@@ -1,0 +1,46 @@
+.news-page {
+  text-align: center;
+  padding: 40px;
+}
+
+.news-page h1 {
+  color: green;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.news-page p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  padding: 0 15px; /* ensures spacing on small screens */
+}
+
+/* ======================== */
+/* Responsive Adjustments   */
+/* ======================== */
+@media (max-width: 768px) {
+  .news-page {
+    padding: 20px;
+  }
+
+  .news-page h1 {
+    font-size: 2rem;
+  }
+
+  .news-page p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .news-page h1 {
+    font-size: 1.6rem;
+  }
+
+  .news-page p {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+  }
+}

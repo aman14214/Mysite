@@ -1,0 +1,145 @@
+.hero {
+  position: relative;
+  height: 70vh;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 20px; /* rounded corners */
+}
+
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Dark overlay layer */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+  z-index: 2;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  font-weight: 500;
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+}
+
+.hero-button {
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: 50px;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 2px solid white;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  backdrop-filter: blur(6px);
+  transition: background-color 0.3s, transform 0.2s;
+  z-index: 2;
+}
+
+.hero-button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* ======================
+   RESPONSIVE DESIGN
+   ====================== */
+
+/* Tablet screens */
+@media (max-width: 1024px) {
+  .hero {
+    height: 60vh;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+    max-width: 600px;
+  }
+
+  .hero-button {
+    bottom: 16px;
+    left: 20px;
+    font-size: 0.95rem;
+    padding: 8px 18px;
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 768px) {
+  .hero {
+    height: 55vh;
+    border-radius: 12px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-button {
+    position: static; /* ✅ move inside flow */
+    margin-top: 20px;
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .hero {
+    height: 50vh;
+  }
+
+  .hero-title {
+    font-size: 1.6rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-button {
+    font-size: 0.85rem;
+    padding: 6px 14px;
+  }
+}

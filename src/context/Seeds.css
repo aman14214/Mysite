@@ -1,0 +1,89 @@
+.seeds-container {
+  padding: 40px 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.seeds-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #059669;
+}
+
+.seeds-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.seed-card {
+  position: relative;
+  width: 250px;
+  height: 180px;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  flex: 1 1 200px;
+  min-width: 200px;
+}
+
+.seed-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.seed-label {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+}
+
+/* ======================== */
+/* Responsive Adjustments   */
+/* ======================== */
+@media (max-width: 1024px) {
+  .seed-card {
+    width: 220px;
+    height: 160px;
+  }
+  .seeds-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .seeds-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .seed-card {
+    width: 90%;
+    height: 200px;
+  }
+  .seeds-title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .seeds-container {
+    padding: 20px 10px;
+  }
+  .seeds-title {
+    font-size: 1.5rem;
+  }
+  .seed-card {
+    width: 100%;
+    height: 180px;
+  }
+  .seed-label {
+    font-size: 1rem;
+  }
+}

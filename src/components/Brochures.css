@@ -1,0 +1,158 @@
+.brochures {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px;
+  background-color: #f3f3f3;
+  gap: 40px;
+}
+
+.brochures-left {
+  flex: 1;
+}
+
+.brochures-left h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #00a651;
+  margin-bottom: 15px;
+}
+
+.brochures-left p {
+  font-size: 1rem;
+  color: #008c4a;
+  max-width: 350px;
+}
+
+.brochures-right {
+  flex: 2;
+  display: flex;
+  flex-wrap: wrap; /* ✅ allow wrapping */
+  gap: 30px;
+  justify-content: center;
+}
+
+/* Card */
+.brochure-card {
+  background: white;
+  border-radius: 20px;
+  padding: 30px 20px 40px;
+  text-align: center;
+  width: 280px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  /* fade + slide in on load */
+  opacity: 0;
+  transform: translateY(50px);
+  animation: slideIn 1s ease forwards;
+}
+
+.brochure-card:nth-child(1) { animation-delay: 0.2s; }
+.brochure-card:nth-child(2) { animation-delay: 0.4s; }
+.brochure-card:nth-child(3) { animation-delay: 0.6s; }
+
+.brochure-card img {
+  max-width: 180px;
+  height: auto;
+  margin: 0 auto 25px;
+  animation: floatUpDown 3s ease-in-out infinite;
+}
+
+.read-now {
+  background-color: #00a651;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  text-decoration: none;
+  font-weight: 500;
+  animation: floatUpDown 3s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+.read-now:hover {
+  background-color: #008c4a;
+}
+
+/* --- Animations --- */
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatUpDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* ======================
+   RESPONSIVE DESIGN
+   ====================== */
+
+/* Tablet screens */
+@media (max-width: 1024px) {
+  .brochures {
+    flex-direction: column; /* ✅ stack left + right */
+    text-align: center;
+    padding: 50px 40px;
+  }
+
+  .brochures-left h2 {
+    font-size: 2.2rem;
+  }
+
+  .brochures-left p {
+    margin: 0 auto 25px;
+    font-size: 0.95rem;
+  }
+
+  .brochures-right {
+    justify-content: center;
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 768px) {
+  .brochures {
+    padding: 40px 20px;
+  }
+
+  .brochures-left h2 {
+    font-size: 1.8rem;
+  }
+
+  .brochures-left p {
+    font-size: 0.9rem;
+  }
+
+  .brochure-card {
+    width: 100%; /* ✅ full width cards */
+    max-width: 350px;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .brochures {
+    padding: 30px 15px;
+    gap: 25px;
+  }
+
+  .brochures-left h2 {
+    font-size: 1.6rem;
+  }
+
+  .brochures-left p {
+    font-size: 0.85rem;
+  }
+
+  .read-now {
+    font-size: 0.85rem;
+    padding: 8px 18px;
+  }
+}

@@ -1,0 +1,151 @@
+.innovation-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.innovation-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.innovation-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #059669;
+  margin-bottom: 20px;
+}
+
+.innovation-header p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Cards Grid */
+.innovation-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+/* Individual Card */
+.innovation-card {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  flex-wrap: wrap;
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 0.8s ease-out;
+}
+
+.innovation-card.slide-left {
+  transform: translateX(-100px);
+}
+
+.innovation-card.animate-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.innovation-card-img {
+  flex: 1;
+  min-width: 280px;
+}
+
+.innovation-card-img img {
+  width: 100%;
+  border-radius: 12px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.innovation-card-img img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.innovation-card-body {
+  flex: 1;
+  min-width: 280px;
+}
+
+.innovation-card-body h2 {
+  font-size: 1.5rem;
+  color: #059669;
+  margin-bottom: 12px;
+}
+
+.innovation-card-body p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+/* ========================== */
+/* Responsive Adjustments */
+/* ========================== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .innovation-header h1 {
+    font-size: 2rem;
+  }
+  .innovation-header p {
+    font-size: 1rem;
+  }
+  .innovation-card {
+    gap: 20px;
+  }
+  .innovation-card-body h2 {
+    font-size: 1.4rem;
+  }
+}
+
+/* Mobiles */
+@media (max-width: 768px) {
+  .innovation-header h1 {
+    font-size: 1.8rem;
+  }
+  .innovation-header p {
+    font-size: 0.95rem;
+  }
+
+  .innovation-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    transform: translateY(40px);
+  }
+
+  .innovation-card.slide-left,
+  .innovation-card.slide-right {
+    transform: translateY(40px);
+  }
+
+  .innovation-card-body h2 {
+    font-size: 1.2rem;
+  }
+
+  .innovation-card-body p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+  .innovation-header h1 {
+    font-size: 1.5rem;
+  }
+  .innovation-header p {
+    font-size: 0.9rem;
+  }
+  .innovation-card-body h2 {
+    font-size: 1.1rem;
+  }
+  .innovation-card-body p {
+    font-size: 0.85rem;
+  }
+}

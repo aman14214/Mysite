@@ -1,0 +1,159 @@
+/* ========================= */
+/* Card3 Wrapper */
+/* ========================= */
+.card3-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.card3-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* ========================= */
+/* Filters Bar */
+/* ========================= */
+.card3-filters {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.card3-filters select {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+/* ========================= */
+/* News Grid */
+/* ========================= */
+.card3-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card3-card {
+  flex: 1 1 280px;
+  max-width: 350px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  background-color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card3-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.card3-img img {
+  width: 100%;
+  display: block;
+}
+
+.card3-body {
+  padding: 15px 20px;
+}
+
+.card3-date {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.card3-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #111;
+}
+
+/* ========================= */
+/* Load More Button */
+/* ========================= */
+.card3-btn.load-more {
+  align-self: center;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 20px;
+}
+
+.card3-btn.load-more:hover {
+  background-color: #0056b3;
+  box-shadow: 0 0 12px rgba(0,123,255,0.5);
+}
+
+/* ========================= */
+/* Responsive Adjustments */
+/* ========================= */
+
+/* Tablets and small laptops */
+@media (max-width: 1024px) {
+  .card3-heading {
+    font-size: 1.8rem;
+  }
+
+  .card3-card {
+    flex: 1 1 45%; /* two per row */
+    max-width: 100%;
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 768px) {
+  .card3-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card3-heading {
+    font-size: 1.6rem;
+  }
+
+  .card3-card {
+    flex: 1 1 100%;
+    max-width: 90%;
+  }
+
+  .card3-filters select {
+    font-size: 0.95rem;
+    padding: 6px 10px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .card3-heading {
+    font-size: 1.3rem;
+  }
+
+  .card3-title {
+    font-size: 1rem;
+  }
+
+  .card3-date {
+    font-size: 0.8rem;
+  }
+
+  .card3-btn.load-more {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+}

@@ -1,0 +1,260 @@
+/* ===== About Page Styling ===== */
+.about-container {
+  font-family: "Segoe UI", Arial, sans-serif;
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Hero Section */
+.about-hero {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.about-title {
+  font-size: 52px;
+  font-weight: 900;
+  color: #00a651; /* Brand Green */
+  line-height: 1.2;
+  margin-bottom: 25px;
+  letter-spacing: -1px;
+}
+
+.about-subtitle {
+  font-size: 20px;
+  font-weight: 500;
+  color: #444;
+  max-width: 750px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Cards Grid */
+.about-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+  padding: 0 10px;
+}
+
+/* Individual Card */
+.card {
+  background: #fff;
+  padding: 30px 25px;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.card h3 {
+  color: #00a651;
+  margin-bottom: 12px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.card p {
+  color: #555;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* ===== Career Section ===== */
+.career-section {
+  background: #f5f5f5;
+  padding: 50px 30px;
+  margin-top: 60px;
+  border-radius: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.career-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #00a651;
+  flex: 1 1 300px;
+  margin: 0;
+}
+
+.career-content {
+  flex: 2 1 400px;
+}
+
+.career-content p {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.career-button {
+  display: inline-block;
+  background: #00a651;
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.career-button:hover {
+  background: #008c47;
+}
+
+/* ===== Split Section ===== */
+.split-section {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.split-card {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.split-card.reverse {
+  flex-direction: row-reverse;
+}
+
+.split-text {
+  flex: 1 1 400px;
+}
+
+.split-text h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #00a651;
+  margin-bottom: 15px;
+}
+
+.split-text p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.split-button {
+  display: inline-block;
+  background: #00a651;
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.split-button:hover {
+  background: #008c47;
+}
+
+.split-image {
+  flex: 1 1 400px;
+}
+
+.split-image img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* ========================= */
+/* Responsive Adjustments */
+/* ========================= */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .about-title {
+    font-size: 42px;
+  }
+  .about-subtitle {
+    font-size: 18px;
+  }
+  .career-title {
+    font-size: 28px;
+  }
+  .split-text h2 {
+    font-size: 24px;
+  }
+}
+
+/* Mobiles */
+@media (max-width: 768px) {
+  .about-title {
+    font-size: 32px;
+  }
+  .about-subtitle {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  .career-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .career-content {
+    flex: 1 1 100%;
+  }
+
+  .split-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .split-card.reverse {
+    flex-direction: column;
+  }
+
+  .split-text {
+    flex: 1 1 100%;
+  }
+
+  .split-text h2 {
+    font-size: 22px;
+  }
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+  .about-title {
+    font-size: 26px;
+  }
+  .about-subtitle {
+    font-size: 15px;
+  }
+  .career-title {
+    font-size: 22px;
+  }
+  .career-content p,
+  .split-text p {
+    font-size: 14px;
+  }
+  .split-text h2 {
+    font-size: 20px;
+  }
+  .career-button,
+  .split-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}

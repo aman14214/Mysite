@@ -1,0 +1,123 @@
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f8f8f8;
+  padding: 20px; /* prevent content touching edges */
+}
+
+.login-container {
+  background-color: #fff;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  width: 350px;
+  text-align: center;
+}
+
+.login-container h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.login-container label {
+  display: block;
+  text-align: left;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #555;
+}
+
+.login-container input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.login-container button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  background-color: #00a651;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-container button:hover {
+  background-color: #007a3d;
+}
+
+.login-links {
+  margin-top: 15px;
+}
+
+.login-links a {
+  color: #00a651;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.login-links a:hover {
+  text-decoration: underline;
+}
+
+/* ========================= */
+/* Responsive Styles */
+/* ========================= */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .login-container {
+    width: 320px;
+    padding: 35px 25px;
+  }
+}
+
+/* Mobile (portrait) */
+@media (max-width: 768px) {
+  .login-container {
+    width: 90%;
+    max-width: 320px;
+    padding: 30px 20px;
+  }
+
+  .login-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .login-container button {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+}
+
+/* Small devices */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 25px 15px;
+  }
+
+  .login-container h2 {
+    font-size: 1.3rem;
+  }
+
+  .login-container label {
+    font-size: 0.9rem;
+  }
+
+  .login-container input {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .login-links {
+    font-size: 0.85rem;
+  }
+}

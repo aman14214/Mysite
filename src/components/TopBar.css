@@ -1,0 +1,70 @@
+.topbar {
+  display: flex;
+  justify-content: flex-end; /* align links to right */
+  align-items: center;
+  padding: 10px 40px;
+  background-color: #80808047;
+  font-size: 14px;
+}
+
+.topbar-left {
+  display: flex;
+  gap: 20px; /* space between links */
+}
+
+.topbar-left a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.topbar-left a:hover {
+  color: #fff;
+  background-color: #2a7b36; /* hover background */
+}
+
+.topbar-left .active {
+  color: #fff;
+  background-color: #2a7b36; /* clicked/active background */
+}
+
+/* ===========================
+   RESPONSIVE DESIGN
+   =========================== */
+
+/* Tablets and smaller */
+@media (max-width: 768px) {
+  .topbar {
+    justify-content: center; /* center links */
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+
+  .topbar-left {
+    gap: 15px; /* reduce spacing */
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 480px) {
+  .topbar {
+    flex-direction: column; /* stack links */
+    align-items: center;
+    padding: 10px;
+  }
+
+  .topbar-left {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    align-items: center;
+  }
+
+  .topbar-left a {
+    width: 100%;
+    text-align: center;
+  }
+}
