@@ -1,5 +1,5 @@
 import React from "react";
-import "./card3.css";
+import "./Card3.css";
 import news1 from "../assets/images/farm.jpg"; // using card2.jpeg for all
 import news2 from "../assets/images/card2.jpeg";
 import news3 from "../assets/images/farm.jpg";
