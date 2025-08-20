@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { FaBriefcase, FaLink, FaUser } from "react-icons/fa";
-import "./Topbar.css";
+import "./TopBar.css";
 
 export default function Topbar() {
   return (
