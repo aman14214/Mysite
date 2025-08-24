@@ -1,7 +1,7 @@
 import React from "react";
-import { NavLink } from "react-router-dom";  // ✅ import NavLink
+import { NavLink } from "react-router-dom";  // for navigation
 import "./Hero.css";
-import bgVideo from "../assets/viedos/hero.mp4"; // check path
+import bgVideo from "../assets/viedos/hero.mp4"; // ✅ check spelling: "videos" not "viedos"
 
 export default function Hero() {
   return (

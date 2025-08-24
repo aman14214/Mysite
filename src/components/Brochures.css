@@ -1,14 +1,16 @@
 .brochures {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  padding: 60px;
+  padding: 60px 80px;
   background-color: #f3f3f3;
   gap: 40px;
+  flex-wrap: wrap; /* ✅ allow wrapping */
 }
 
 .brochures-left {
   flex: 1;
+  min-width: 280px;
 }
 
 .brochures-left h2 {
@@ -21,18 +23,19 @@
 .brochures-left p {
   font-size: 1rem;
   color: #008c4a;
-  max-width: 350px;
+  max-width: 400px;
+  line-height: 1.5;
 }
 
 .brochures-right {
   flex: 2;
   display: flex;
-  flex-wrap: wrap; /* ✅ allow wrapping */
+  flex-wrap: wrap;
   gap: 30px;
   justify-content: center;
 }
 
-/* Card */
+/* --- Card --- */
 .brochure-card {
   background: white;
   border-radius: 20px;
@@ -43,8 +46,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  
-  /* fade + slide in on load */
+
+  /* fade + slide in */
   opacity: 0;
   transform: translateY(50px);
   animation: slideIn 1s ease forwards;
@@ -97,9 +100,14 @@
 /* Tablet screens */
 @media (max-width: 1024px) {
   .brochures {
-    flex-direction: column; /* ✅ stack left + right */
+    flex-direction: column;
     text-align: center;
     padding: 50px 40px;
+    gap: 35px;
+  }
+
+  .brochures-left {
+    max-width: 100%;
   }
 
   .brochures-left h2 {
@@ -107,7 +115,7 @@
   }
 
   .brochures-left p {
-    margin: 0 auto 25px;
+    margin: 0 auto;
     font-size: 0.95rem;
   }
 
@@ -120,10 +128,11 @@
 @media (max-width: 768px) {
   .brochures {
     padding: 40px 20px;
+    gap: 30px;
   }
 
   .brochures-left h2 {
-    font-size: 1.8rem;
+    font-size: 1.9rem;
   }
 
   .brochures-left p {
@@ -131,7 +140,7 @@
   }
 
   .brochure-card {
-    width: 100%; /* ✅ full width cards */
+    width: 100%;
     max-width: 350px;
   }
 }

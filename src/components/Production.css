@@ -1,0 +1,165 @@
+.production {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.production-title {
+  font-size: 34px;           /* slightly bigger */
+  font-weight: 900;          /* much bolder */
+  margin-bottom: 15px;
+  color: #222;               /* deeper shade for impact */
+  letter-spacing: -0.5px;
+}
+
+.production-title span {
+  color: #00833e; /* green highlight */
+}
+
+.production-desc {
+  font-size: 17px;           /* a bit larger */
+  color: #444;
+  font-weight: 500;          /* stronger */
+  max-width: 650px;
+  margin: 0 auto 35px auto;
+  line-height: 1.6;          /* better readability */
+}
+
+.read-more {
+  color: #00833e;
+  cursor: pointer;
+  font-weight: 700;          /* bolder for emphasis */
+  transition: color 0.3s;
+}
+.read-more:hover {
+  color: #006b32;
+}
+
+/* ==================== */
+/* Slideshow container  */
+/* ==================== */
+.slideshow-container {
+  width: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Track of slides */
+.slideshow-track {
+  display: flex;
+  animation: scroll 25s linear infinite;
+  gap: 20px;
+  will-change: transform;
+}
+
+/* Individual slide */
+.slide {
+  min-width: 220px;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.slide-img {
+  width: 200px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.slide-text {
+  margin-top: 8px;
+  font-weight: 600;
+  color: #00833e;
+  font-size: 0.95rem;
+}
+
+/* Keyframe animation for auto-scrolling */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* ==================== */
+/* Responsive Breakpoints */
+/* ==================== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .production-title {
+    font-size: 30px;
+  }
+  .production-desc {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+  .slide-img {
+    width: 180px;
+    height: 120px;
+  }
+}
+
+/* Mobiles */
+@media (max-width: 768px) {
+  .production {
+    padding: 40px 15px;
+  }
+
+  .production-title {
+    font-size: 26px;
+    font-weight: 800; /* still bold on small screens */
+  }
+
+  .production-desc {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 25px;
+  }
+
+  .slideshow-track {
+    gap: 15px;
+    animation: scroll 35s linear infinite; /* slower for readability */
+  }
+
+  .slide {
+    min-width: 160px;
+  }
+
+  .slide-img {
+    width: 150px;
+    height: 100px;
+  }
+
+  .slide-text {
+    font-size: 0.85rem;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 480px) {
+  .production-title {
+    font-size: 22px;
+    font-weight: 800;
+  }
+
+  .production-desc {
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+  .slide {
+    min-width: 140px;
+  }
+
+  .slide-img {
+    width: 130px;
+    height: 90px;
+  }
+
+  .slide-text {
+    font-size: 0.8rem;
+  }
+}

@@ -1,44 +1,51 @@
-/* Main header container */
+/* ======================
+   MAIN HEADER
+   ====================== */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 14px 28px;
+  padding: 12px 18px;
   background: #fff;
   border-bottom: 1px solid #ddd;
   position: sticky;
   top: 0;
   z-index: 1000;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-/* Logo + text container */
+/* ======================
+   LOGO + TEXT
+   ====================== */
 .header-left {
   display: flex;
   align-items: center;
+  flex: 1;
+  min-width: 0; /* prevent overflow */
 }
 
-/* Logo + text link */
 .header-logo-link {
   display: flex;
-  align-items: flex-start;
-  gap: 10px;
+  align-items: center;
+  gap: 8px;
   text-decoration: none;
 }
 
-/* Logo */
 .logo {
   height: 45px;
+  flex-shrink: 0;
 }
 
-/* Text beside logo */
 .logo-text {
   display: flex;
   flex-direction: column;
-  line-height: 1.3;
+  line-height: 1.2;
+  word-break: break-word;
 }
 
 .welcome-text {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   color: #111;
   margin: 0;
@@ -49,7 +56,9 @@
   color: #666;
 }
 
-/* Navigation links */
+/* ======================
+   NAV LINKS
+   ====================== */
 .nav-links {
   display: flex;
   gap: 22px;
@@ -57,7 +66,7 @@
 
 .nav-links a {
   font-size: 15px;
-  font-weight: bold;   /* ✅ Always bold */
+  font-weight: bold;
   color: #333;
   text-decoration: none;
   position: relative;
@@ -65,14 +74,12 @@
   transition: color 0.3s ease;
 }
 
-/* Hover effect */
 .nav-links a:hover {
-  color: #00a651; /* ✅ Green on hover */
+  color: #00a651;
 }
 
-/* Active underline + color */
 .nav-links a.active {
-  color: #00a651; /* ✅ Green when active */
+  color: #00a651;
 }
 
 .nav-links a.active::after,
@@ -88,34 +95,89 @@
 }
 
 /* ======================
+   HAMBURGER
+   ====================== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  margin-left: auto;
+}
+
+.bar {
+  width: 26px;
+  height: 3px;
+  background-color: #333;
+  transition: 0.4s;
+}
+
+.bar.open:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 6px);
+}
+.bar.open:nth-child(2) {
+  opacity: 0;
+}
+.bar.open:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ======================
    RESPONSIVE DESIGN
    ====================== */
 
-/* Tablets */
+/* Tablets & below */
 @media (max-width: 900px) {
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 14px;
-    padding: 12px 22px;
+  .hamburger {
+    display: flex;
   }
 
   .nav-links {
-    flex-wrap: wrap;
+    position: fixed; /* ✅ fixed to prevent push issues */
+    top: 0;
+    right: 0;
+    height: 100vh; /* ✅ full height menu */
+    background: #fff;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 240px;
     gap: 18px;
+    padding: 80px 20px 20px; /* space for header */
+    border-left: 1px solid #ddd;
+    box-shadow: -2px 4px 10px rgba(0,0,0,0.1);
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .nav-links.open {
+    transform: translateX(0);
   }
 }
 
-/* Mobile */
+/* Mobiles */
 @media (max-width: 600px) {
-  .header {
-    padding: 10px 16px;
-    align-items: center;
-    text-align: center;
-  }
-
   .logo {
     height: 38px;
+  }
+
+  .welcome-text {
+    font-size: 14px;
+  }
+
+  .sub-text {
+    font-size: 12px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+    padding: 8px 0;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 400px) {
+  .logo {
+    height: 32px;
   }
 
   .welcome-text {
@@ -123,34 +185,12 @@
   }
 
   .sub-text {
-    font-size: 12px;
+    font-size: 11px;
   }
 
   .nav-links {
-    flex-direction: column;
-    width: 100%;
-    gap: 12px;
-    align-items: center;
-  }
-
-  .nav-links a {
-    font-size: 14px;
-    padding: 6px 0;
-  }
-}
-
-/* Extra small devices */
-@media (max-width: 400px) {
-  .logo {
-    height: 32px;
-  }
-
-  .welcome-text {
-    font-size: 12px;
-  }
-
-  .sub-text {
-    font-size: 11px;
+    width: 200px;
+    padding: 70px 15px 15px;
   }
 
   .nav-links a {

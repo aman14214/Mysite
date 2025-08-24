@@ -1,18 +1,22 @@
 .hero {
   position: relative;
-  height: 70vh;
+  height: 65vh;              /* ✅ Shorter default height */
   width: 100%;
   overflow: hidden;
-  border-radius: 20px; /* rounded corners */
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-video {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover;          /* ✅ Always cover full space */
+  object-position: center;    /* ✅ Keep video centered */
 }
 
-/* Dark overlay layer */
+/* Dark overlay */
 .hero::after {
   content: "";
   position: absolute;
@@ -38,19 +42,18 @@
   font-size: 3rem;
   font-weight: 800;
   margin-bottom: 1rem;
+  line-height: 1.2;
 }
 
 .hero-subtitle {
   font-size: 1.2rem;
   font-weight: 500;
   max-width: 800px;
-  margin: 0 auto 3rem auto;
+  margin: 0 auto 2rem auto;
+  line-height: 1.5;
 }
 
 .hero-button {
-  position: absolute;
-  bottom: 20px;
-  left: 30px;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -76,48 +79,46 @@
    RESPONSIVE DESIGN
    ====================== */
 
-/* Tablet screens */
+/* Tablets */
 @media (max-width: 1024px) {
   .hero {
-    height: 60vh;
+    height: 55vh;           /* ✅ Reduce height */
   }
 
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 2.4rem;
   }
 
   .hero-subtitle {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     max-width: 600px;
   }
 
   .hero-button {
-    bottom: 16px;
-    left: 20px;
     font-size: 0.95rem;
     padding: 8px 18px;
   }
 }
 
-/* Mobile screens */
+/* Mobiles */
 @media (max-width: 768px) {
   .hero {
-    height: 55vh;
+    height: 45vh;           /* ✅ Much shorter on mobile */
     border-radius: 12px;
+    padding: 0 15px;
   }
 
   .hero-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .hero-subtitle {
-    font-size: 1rem;
-    margin-bottom: 2rem;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
   }
 
   .hero-button {
-    position: static; /* ✅ move inside flow */
-    margin-top: 20px;
+    margin-top: 12px;
     font-size: 0.9rem;
     padding: 8px 16px;
   }
@@ -126,20 +127,22 @@
 /* Extra small screens */
 @media (max-width: 480px) {
   .hero {
-    height: 50vh;
+    height: 40vh;          /* ✅ Keep compact */
+    border-radius: 8px;
+    padding: 0 10px;
   }
 
   .hero-title {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 
   .hero-subtitle {
-    font-size: 0.9rem;
-    margin-bottom: 1.5rem;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
   }
 
   .hero-button {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     padding: 6px 14px;
   }
 }
