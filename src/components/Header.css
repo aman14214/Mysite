@@ -133,24 +133,28 @@
   }
 
   .nav-links {
-    position: fixed; /* ✅ fixed to prevent push issues */
+    position: fixed;
     top: 0;
-    right: 0;
-    height: 100vh; /* ✅ full height menu */
+    left: 0; /* slide from left */
+    height: 100vh;
     background: #fff;
     flex-direction: column;
     align-items: flex-start;
     width: 240px;
+    max-width: 80vw; /* prevent overflow */
     gap: 18px;
-    padding: 80px 20px 20px; /* space for header */
-    border-left: 1px solid #ddd;
-    box-shadow: -2px 4px 10px rgba(0,0,0,0.1);
-    transform: translateX(100%);
+    padding: 80px 16px 20px; /* smaller horizontal padding */
+    border-right: 1px solid #ddd;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    transform: translateX(-100%); /* hidden left */
     transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+    box-sizing: border-box; /* include padding in width */
+    overflow-x: hidden; /* prevent horizontal scroll */
   }
 
   .nav-links.open {
-    transform: translateX(0);
+    transform: translateX(0); /* slide in */
   }
 }
 
@@ -190,7 +194,8 @@
 
   .nav-links {
     width: 200px;
-    padding: 70px 15px 15px;
+    max-width: 90vw;
+    padding: 70px 12px 15px;
   }
 
   .nav-links a {
