@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { FaTwitter, FaLinkedin, FaYoutube } from "react-icons/fa";
-import logo from "../assets/images/logo.png"; // update with your logo
+import { FaTwitter, FaLinkedin, FaYoutube, FaMapMarkerAlt } from "react-icons/fa";
+import logo from "../assets/images/logo.png";
 import "./Footer.css";
 
 export default function Footer() {
@@ -9,16 +9,28 @@ export default function Footer() {
     <footer className="footer">
       {/* Top Section */}
       <div className="footer-top">
+        
         {/* Left Section */}
         <div className="footer-left">
           <div className="footer-logo-wrap">
             <img src={logo} alt="Logo" className="footer-logo" />
             <span className="footer-logo-text">MySite</span>
           </div>
-          <p className="footer-office-title">Head Office</p>
-          <p>123 Green Street, New Delhi, India</p>
-          <p>Email: info@mysite.com</p>
-          <button className="footer-btn">Get in Touch</button>
+          <div className="footer-address">
+            <p className="footer-office-title">Head Office</p>
+            <p>Sector 5, D Block, Indira Nagar, Lucknow, Uttar Pradesh 226016</p>
+            <p>Email: info@mysite.com</p>
+
+            {/* Google Maps Button */}
+            <a
+              href="https://maps.app.goo.gl/kFTGc5zKpFiAajfF7"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-map-btn"
+            >
+              <FaMapMarkerAlt /> View on Map
+            </a>
+          </div>
         </div>
 
         {/* Middle Links */}
@@ -58,6 +70,18 @@ export default function Footer() {
             <a href="#"><FaTwitter /></a>
             <a href="#"><FaLinkedin /></a>
             <a href="#"><FaYoutube /></a>
+          </div>
+
+          {/* Newsletter Section */}
+          <div className="footer-newsletter">
+            <h3>Let's stay in touch</h3>
+            <p>
+              Update your knowledge with the latest research,<br />
+              product news and innovation!
+            </p>
+            <button className="newsletter-btn">
+              Subscribe to newsletter
+            </button>
           </div>
         </div>
       </div>

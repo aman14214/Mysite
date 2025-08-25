@@ -1,33 +1,38 @@
 .production {
   text-align: center;
   padding: 50px 20px;
+  background: #fff;
 }
 
+/* Title */
 .production-title {
-  font-size: 34px;           /* slightly bigger */
-  font-weight: 900;          /* much bolder */
+  font-size: 34px;
+  font-weight: 900;
   margin-bottom: 15px;
-  color: #222;               /* deeper shade for impact */
+  color: #222;
   letter-spacing: -0.5px;
+  text-align: center;
 }
 
 .production-title span {
-  color: #00833e; /* green highlight */
+  color: #00833e;
 }
 
+/* Paragraph */
 .production-desc {
-  font-size: 17px;           /* a bit larger */
+  font-size: 17px;
   color: #444;
-  font-weight: 500;          /* stronger */
-  max-width: 650px;
+  font-weight: 500;
+  max-width: 700px;
   margin: 0 auto 35px auto;
-  line-height: 1.6;          /* better readability */
+  line-height: 1.6;
+  text-align: center;
 }
 
 .read-more {
   color: #00833e;
   cursor: pointer;
-  font-weight: 700;          /* bolder for emphasis */
+  font-weight: 700;
   transition: color 0.3s;
 }
 .read-more:hover {
@@ -40,40 +45,38 @@
 .slideshow-container {
   width: 100%;
   overflow: hidden;
-  margin: 0 auto;
+  margin: 0 auto 40px auto;
   position: relative;
 }
 
-/* Track of slides */
 .slideshow-track {
   display: flex;
   animation: scroll 25s linear infinite;
-  gap: 20px;
+  gap: 30px;
   will-change: transform;
 }
 
-/* Individual slide */
 .slide {
-  min-width: 220px;
+  min-width: 300px;
   flex-shrink: 0;
   text-align: center;
 }
 
 .slide-img {
-  width: 200px;
-  height: 130px;
+  width: 280px;
+  height: 180px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 12px;
 }
 
 .slide-text {
-  margin-top: 8px;
+  margin-top: 10px;
   font-weight: 600;
   color: #00833e;
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
-/* Keyframe animation for auto-scrolling */
+/* Keyframe animation */
 @keyframes scroll {
   0% {
     transform: translateX(0);
@@ -86,8 +89,6 @@
 /* ==================== */
 /* Responsive Breakpoints */
 /* ==================== */
-
-/* Tablets */
 @media (max-width: 1024px) {
   .production-title {
     font-size: 30px;
@@ -96,69 +97,58 @@
     font-size: 16px;
     padding: 0 10px;
   }
+  .slide {
+    min-width: 250px;
+  }
   .slide-img {
-    width: 180px;
-    height: 120px;
+    width: 240px;
+    height: 160px;
   }
 }
 
-/* Mobiles */
 @media (max-width: 768px) {
   .production {
     padding: 40px 15px;
   }
-
   .production-title {
     font-size: 26px;
-    font-weight: 800; /* still bold on small screens */
+    font-weight: 800;
   }
-
   .production-desc {
     font-size: 15px;
-    font-weight: 500;
     margin-bottom: 25px;
   }
-
   .slideshow-track {
-    gap: 15px;
-    animation: scroll 35s linear infinite; /* slower for readability */
+    gap: 20px;
+    animation: scroll 35s linear infinite;
   }
-
   .slide {
-    min-width: 160px;
+    min-width: 200px;
   }
-
   .slide-img {
-    width: 150px;
-    height: 100px;
+    width: 190px;
+    height: 130px;
   }
-
   .slide-text {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
   }
 }
 
-/* Extra small phones */
 @media (max-width: 480px) {
   .production-title {
     font-size: 22px;
-    font-weight: 800;
   }
-
   .production-desc {
     font-size: 14px;
     line-height: 1.45;
   }
-
   .slide {
-    min-width: 140px;
+    min-width: 160px;
   }
-
   .slide-img {
-    width: 130px;
-    height: 90px;
+    width: 150px;
+    height: 100px;
   }
-
   .slide-text {
     font-size: 0.8rem;
   }

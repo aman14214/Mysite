@@ -1,77 +1,80 @@
+/* =========================
+   Brochures (responsive, centered & equal cards)
+   ========================= */
 .brochures {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  padding: 60px 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 24px;
   background-color: #f3f3f3;
-  gap: 40px;
-  flex-wrap: wrap; /* ✅ allow wrapping */
+
+  display: grid;
+  grid-template-columns: 0.75fr 2.25fr;
+  gap: 32px;
+  align-items: center;   /* ✅ vertically center text with cards */
 }
 
-.brochures-left {
-  flex: 1;
-  min-width: 280px;
-}
-
+/* Left column */
 .brochures-left h2 {
-  font-size: 2.5rem;
-  font-weight: bold;
+  font-size: 2.2rem;
+  font-weight: 800;
   color: #00a651;
-  margin-bottom: 15px;
+  margin: 0 0 12px;
 }
 
 .brochures-left p {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: #008c4a;
-  max-width: 400px;
-  line-height: 1.5;
+  max-width: 420px;
+  line-height: 1.55;
 }
 
+/* Right column - card layout */
 .brochures-right {
-  flex: 2;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  justify-items: center;
 }
 
 /* --- Card --- */
 .brochure-card {
-  background: white;
+  background: #fff;
   border-radius: 20px;
-  padding: 30px 20px 40px;
+  padding: 20px 18px 28px;
+  width: 100%;
+  max-width: 280px;
   text-align: center;
-  width: 280px;
-  box-shadow: 0px 4px 10px rgba(0,0,0,0.08);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 
-  /* fade + slide in */
   opacity: 0;
-  transform: translateY(50px);
-  animation: slideIn 1s ease forwards;
+  transform: translateY(40px);
+  animation: slideIn 0.8s ease forwards;
 }
 
-.brochure-card:nth-child(1) { animation-delay: 0.2s; }
-.brochure-card:nth-child(2) { animation-delay: 0.4s; }
-.brochure-card:nth-child(3) { animation-delay: 0.6s; }
+.brochure-card:nth-child(1) { animation-delay: 0.1s; }
+.brochure-card:nth-child(2) { animation-delay: 0.2s; }
+.brochure-card:nth-child(3) { animation-delay: 0.3s; }
 
 .brochure-card img {
-  max-width: 180px;
-  height: auto;
-  margin: 0 auto 25px;
+  width: 100%;
+  max-width: 220px;
+  max-height: 150px;   /* ✅ keeps images equal size */
+  object-fit: cover;   /* ✅ crops instead of stretching */
+  border-radius: 10px;
+  margin: 0 auto 14px;
+  display: block;
   animation: floatUpDown 3s ease-in-out infinite;
 }
 
 .read-now {
+  display: inline-block;
   background-color: #00a651;
-  color: white;
-  padding: 10px 25px;
-  border-radius: 50px;
+  color: #fff;
+  padding: 10px 24px;
+  border-radius: 999px;
   font-size: 0.95rem;
+  font-weight: 600;
   text-decoration: none;
-  font-weight: 500;
   animation: floatUpDown 3s ease-in-out infinite;
   animation-delay: 1s;
 }
@@ -82,86 +85,94 @@
 
 /* --- Animations --- */
 @keyframes slideIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes floatUpDown {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  50%      { transform: translateY(-6px); }
 }
 
-/* ======================
-   RESPONSIVE DESIGN
-   ====================== */
+/* =========================
+   Responsive
+   ========================= */
 
-/* Tablet screens */
+/* <= 1024px (Tablet landscape & small laptop) */
 @media (max-width: 1024px) {
   .brochures {
-    flex-direction: column;
-    text-align: center;
-    padding: 50px 40px;
-    gap: 35px;
+    grid-template-columns: 1fr;
+    padding: 48px 24px;
+    row-gap: 28px;
+    align-items: start;
   }
 
   .brochures-left {
-    max-width: 100%;
-  }
-
-  .brochures-left h2 {
-    font-size: 2.2rem;
+    text-align: center;
   }
 
   .brochures-left p {
     margin: 0 auto;
-    font-size: 0.95rem;
   }
 
   .brochures-right {
+    grid-template-columns: repeat(2, 1fr);
     justify-content: center;
+    gap: 20px;
+  }
+
+  .brochure-card {
+    max-width: 260px;
+  }
+
+  .brochure-card img {
+    max-width: 200px;
+    max-height: 140px;
   }
 }
 
-/* Mobile screens */
+/* <= 768px (Tablet portrait / large phones) */
 @media (max-width: 768px) {
   .brochures {
-    padding: 40px 20px;
-    gap: 30px;
+    padding: 36px 18px;
   }
 
-  .brochures-left h2 {
-    font-size: 1.9rem;
+  .brochures-right {
+    grid-template-columns: 1fr;  /* one per row */
+    gap: 18px;
   }
 
-  .brochures-left p {
-    font-size: 0.9rem;
+  .brochure-card {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .brochure-card img {
+    max-width: 180px;
+    max-height: 130px;
+  }
+}
+
+/* <= 480px (Phones) */
+@media (max-width: 480px) {
+  .brochures {
+    padding: 28px 14px;
+    row-gap: 20px;
   }
 
   .brochure-card {
     width: 100%;
-    max-width: 350px;
-  }
-}
-
-/* Extra small screens */
-@media (max-width: 480px) {
-  .brochures {
-    padding: 30px 15px;
-    gap: 25px;
+    max-width: 300px;
+    padding: 18px 14px 24px;
   }
 
-  .brochures-left h2 {
-    font-size: 1.6rem;
-  }
-
-  .brochures-left p {
-    font-size: 0.85rem;
+  .brochure-card img {
+    max-width: 160px;
+    max-height: 120px;
   }
 
   .read-now {
-    font-size: 0.85rem;
-    padding: 8px 18px;
+    width: 100%;
+    padding: 12px 0;
+    font-size: 0.95rem;
   }
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import "./Production.css";
 import Footer from "./Footer"; 
-import agriImage from "../assets/images/agri.jpg"; // your image
+import agriImage from "../assets/images/agri.jpg"; 
 
 // Crop names list
 const crops = [
@@ -26,9 +26,12 @@ function Production() {
       <h2 className="production-title">
         Our <span>Production</span>
       </h2>
+
+      {/* Paragraph */}
       <p className="production-desc">
-        Kerikaa Crop Science offer contract seed production services in respect
-        of open-pollinated & hybrid vegetable seeds...
+        Kerikaa Crop Science offers contract seed production services in respect
+        of open-pollinated & hybrid vegetable seeds. We are committed to providing
+        high-quality seeds with sustainable practices to empower farmers worldwide.
         <span className="read-more"> Read More »</span>
       </p>
 
@@ -43,9 +46,9 @@ function Production() {
           ))}
         </div>
       </div>
-           <Footer /> 
+
+      <Footer /> 
     </section>
-    
   );
 }
 

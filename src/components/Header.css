@@ -130,12 +130,13 @@
 @media (max-width: 900px) {
   .hamburger {
     display: flex;
+    margin-left: 0;
   }
 
   .nav-links {
     position: fixed;
     top: 0;
-    left: 0; /* slide from left */
+    right: 0; /* align to right */
     height: 100vh;
     background: #fff;
     flex-direction: column;
@@ -143,18 +144,18 @@
     width: 240px;
     max-width: 80vw; /* prevent overflow */
     gap: 18px;
-    padding: 80px 16px 20px; /* smaller horizontal padding */
-    border-right: 1px solid #ddd;
-    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
-    transform: translateX(-100%); /* hidden left */
+    padding: 80px 16px 20px;
+    border-left: 1px solid #ddd;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+    transform: translateX(100%); /* hidden to right */
     transition: transform 0.3s ease-in-out;
     z-index: 1000;
-    box-sizing: border-box; /* include padding in width */
-    overflow-x: hidden; /* prevent horizontal scroll */
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
 
   .nav-links.open {
-    transform: translateX(0); /* slide in */
+    transform: translateX(0); /* slide in from right */
   }
 }
 
